@@ -1,34 +1,75 @@
-/* Pixel Pushers Design System Implementation */
+/* Modern Dual Theme Design System */
 
-/* Custom Properties - Exact Pixel Pushers Colors */
-:root {
-  /* Backgrounds - Exact Pixel Pushers Colors */
-  --bg-page: #1a1c1b;                       /* Main black background */
-  --bg-card: #302f2c;                       /* Dark gray card backgrounds */
-  --bg-light: #dfddd6;                      /* Light backgrounds when needed */
+/* Custom Properties - Dark Theme (Default) */
+:root, .dark {
+  /* Backgrounds - Dark Theme */
+  --bg-page: #0a0a0a;                       /* Deep black background */
+  --bg-card: #1a1a1a;                       /* Dark gray card backgrounds */
+  --bg-light: #2a2a2a;                      /* Lighter gray for sections */
   
-  /* Text - Exact Pixel Pushers Colors */
-  --text-primary: #d9fb06;                  /* Lime green primary text */
-  --text-secondary: #888680;                /* Mid gray supporting text */
-  --text-muted: #302f2c;                    /* Dark gray muted text */
-  --text-inverse: #1a1c1b;                  /* Black text on light backgrounds */
+  /* Text - Clean White/Gray Theme */
+  --text-primary: #ffffff;                  /* Pure white primary text */
+  --text-secondary: #b3b3b3;                /* Lighter gray for better readability */
+  --text-muted: #808080;                    /* Mid gray muted text */
+  --text-inverse: #0a0a0a;                  /* Black text on light backgrounds */
   
-  /* Borders - Exact Pixel Pushers Colors */
-  --border-light: rgba(63, 72, 22, 0.5);   /* Subtle olive-tinted borders */
-  --border-medium: #3f4816;                 /* Standard olive borders */
-  --border-strong: #888680;                 /* Strong gray borders */
+  /* Borders - Subtle Gray Borders */
+  --border-light: rgba(255, 255, 255, 0.1); /* Very subtle white borders */
+  --border-medium: rgba(255, 255, 255, 0.2); /* Standard borders */
+  --border-strong: rgba(255, 255, 255, 0.3); /* Strong borders */
   
-  /* MAIN BRAND COLORS - Pixel Pushers Brand Colors Only */
-  --brand-primary: #d9fb06;                 /* Primary lime green */
-  --brand-hover: rgba(217, 251, 6, 0.8);   /* Hover state */
-  --brand-active: rgba(217, 251, 6, 0.6);  /* Active/pressed state */
+  /* MAIN BRAND COLORS - Blue Purple Gradient */
+  --brand-primary: #6366f1;                 /* Indigo-blue primary */
+  --brand-hover: #7c3aed;                   /* Purple hover state */
+  --brand-active: #8b5cf6;                  /* Light purple active state */
   
-  /* Supporting Colors - Use sparingly for variety */
-  --secondary-olive: #3f4816;               /* Dark olive green */
-  --secondary-yellow: #f8d47a;              /* Warm yellow accent */
-  --secondary-blue: #0073e6;                /* Blue for links */
-  --neutral-white: white;                   /* Pure white */
-  --neutral-light: #dfddd6;                 /* Light neutral */
+  /* Supporting Colors - Blue Purple Palette */
+  --secondary-blue: #3b82f6;                /* Bright blue accent */
+  --secondary-purple: #a855f7;              /* Purple accent */
+  --secondary-indigo: #4f46e5;              /* Indigo accent */
+  --neutral-white: #ffffff;                 /* Pure white */
+  --neutral-light: #f0f0f0;                 /* Light neutral gray */
+  
+  /* Shadow - Dark Theme */
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-medium: rgba(0, 0, 0, 0.5);
+  --shadow-strong: rgba(0, 0, 0, 0.7);
+}
+
+/* Light Theme Variables */
+.light {
+  /* Backgrounds - Light Theme */
+  --bg-page: #ffffff;                       /* Pure white background */
+  --bg-card: #f8fafc;                       /* Light gray card backgrounds */
+  --bg-light: #f1f5f9;                      /* Slightly darker gray for sections */
+  
+  /* Text - Dark Text on Light Theme */
+  --text-primary: #1e293b;                  /* Dark slate primary text */
+  --text-secondary: #475569;                /* Medium slate secondary text */
+  --text-muted: #64748b;                    /* Light slate muted text */
+  --text-inverse: #ffffff;                  /* White text on dark backgrounds */
+  
+  /* Borders - Subtle Dark Borders */
+  --border-light: rgba(15, 23, 42, 0.1);   /* Very subtle dark borders */
+  --border-medium: rgba(15, 23, 42, 0.15); /* Standard borders */
+  --border-strong: rgba(15, 23, 42, 0.25); /* Strong borders */
+  
+  /* MAIN BRAND COLORS - Same across themes */
+  --brand-primary: #6366f1;                 /* Indigo-blue primary */
+  --brand-hover: #7c3aed;                   /* Purple hover state */
+  --brand-active: #8b5cf6;                  /* Light purple active state */
+  
+  /* Supporting Colors - Blue Purple Palette */
+  --secondary-blue: #3b82f6;                /* Bright blue accent */
+  --secondary-purple: #a855f7;              /* Purple accent */
+  --secondary-indigo: #4f46e5;              /* Indigo accent */
+  --neutral-white: #ffffff;                 /* Pure white */
+  --neutral-light: #f0f0f0;                 /* Light neutral gray */
+  
+  /* Shadow - Light Theme */
+  --shadow-light: rgba(15, 23, 42, 0.1);
+  --shadow-medium: rgba(15, 23, 42, 0.15);
+  --shadow-strong: rgba(15, 23, 42, 0.25);
 }
 
 /* Font Setup - Import Google Fonts */
@@ -182,8 +223,8 @@ body {
 
 /* Button Components */
 .btn-primary {
-  background: var(--brand-primary);
-  color: var(--text-inverse);
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-hover));
+  color: var(--neutral-white);
   border: none;
   border-radius: 10rem; /* Pill/Capsule - Extremely high corner radius */
   padding: 1em 1.5em;
@@ -200,11 +241,13 @@ body {
   line-height: 1.1em;
   letter-spacing: -0.04em;
   text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
 }
 
 .btn-primary:hover {
   transform: scale(1.02);
-  opacity: 0.9;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  background: linear-gradient(135deg, var(--brand-hover), var(--brand-active));
 }
 
 .btn-primary:active {
@@ -214,7 +257,7 @@ body {
 .btn-secondary {
   background: transparent;
   color: var(--brand-primary);
-  border: 1px solid var(--brand-primary);
+  border: 2px solid var(--brand-primary);
   border-radius: 10rem; /* Pill/Capsule - Extremely high corner radius */
   padding: 1em 1.5em;
   font-family: 'Inter', Arial, sans-serif;
@@ -265,15 +308,100 @@ body {
   color: var(--brand-active);
 }
 
-/* Hero Section Styles */
-.hero-section {
-  background: var(--bg-page);
+/* Hero Section Styles - Dark Theme */
+.dark .hero-section {
+  background: linear-gradient(135deg, var(--bg-page) 0%, #1a1a2e 50%, #16213e 100%);
   min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
-  padding: 120px 0px 80px;
+  padding: 120px 0px 0px;
   overflow: hidden;
+}
+
+/* Hero Section Styles - Light Theme */
+.light .hero-section {
+  background: linear-gradient(135deg, var(--bg-page) 0%, #f1f5f9 50%, #e2e8f0 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 120px 0px 0px;
+  overflow: hidden;
+}
+
+/* Default (fallback) - Dark Theme */
+.hero-section {
+  background: linear-gradient(135deg, var(--bg-page) 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 120px 0px 0px;
+  overflow: hidden;
+}
+
+/* Hero to About transition gradient - Dark Theme */
+.dark .hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(26, 26, 46, 0.1) 20%,
+    rgba(22, 33, 62, 0.3) 40%,
+    rgba(16, 21, 62, 0.5) 60%,
+    rgba(10, 10, 10, 0.8) 80%,
+    var(--bg-page) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Hero to About transition gradient - Light Theme */
+.light .hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(248, 250, 252, 0.1) 20%,
+    rgba(241, 245, 249, 0.3) 40%,
+    rgba(226, 232, 240, 0.5) 60%,
+    rgba(255, 255, 255, 0.8) 80%,
+    var(--bg-page) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Default (fallback for :root) - Dark Theme */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(26, 26, 46, 0.1) 20%,
+    rgba(22, 33, 62, 0.3) 40%,
+    rgba(16, 21, 62, 0.5) 60%,
+    rgba(10, 10, 10, 0.8) 80%,
+    var(--bg-page) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero-background {
@@ -292,9 +420,30 @@ body {
   inset: 0%;
 }
 
+/* Hero overlay - Dark Theme */
+.dark .hero-overlay {
+  opacity: 0.8;
+  background-image: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(124, 58, 237, 0.2), rgba(0, 0, 0, 0.6));
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+/* Hero overlay - Light Theme */
+.light .hero-overlay {
+  opacity: 0.85;
+  background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.6), rgba(99, 102, 241, 0.2), rgba(15, 23, 42, 0.7));
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+/* Default (fallback) - Dark Theme */
 .hero-overlay {
-  opacity: 0.6;
-  background-image: linear-gradient(135deg, #000, transparent);
+  opacity: 0.8;
+  background-image: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(124, 58, 237, 0.2), rgba(0, 0, 0, 0.6));
   width: 100%;
   height: 100%;
   position: absolute;
@@ -304,7 +453,7 @@ body {
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 15ch;
+  max-width: 50rem;
 }
 
 .hero-title {
@@ -315,6 +464,76 @@ body {
   color: var(--text-primary);
   text-transform: uppercase;
   margin-bottom: 24px;
+}
+
+/* Hero text overrides for light theme */
+.light .hero-section .hero-title {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.light .hero-section .body-large {
+  color: #f8fafc;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.light .hero-section .body-medium {
+  color: #f1f5f9 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.light .hero-section .text-primary {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Navigation styles for hero section in light theme */
+.header-hero-light .nav-link {
+  color: #ffffff !important;
+  transition: color 0.3s ease;
+}
+
+.header-hero-light .nav-link:hover {
+  color: #e2e8f0 !important;
+}
+
+/* Scroll indicator button for light theme in hero */
+.light .hero-section .scroll-indicator {
+  color: #1e293b !important;
+}
+
+.light .hero-section .scroll-indicator:hover {
+  color: var(--brand-hover) !important;
+}
+
+/* Base scroll indicator styles */
+.scroll-indicator {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dark .scroll-indicator {
+  color: #ffffff;
+}
+
+.dark .scroll-indicator:hover {
+  color: var(--brand-hover);
+}
+
+/* Base scroll indicator styles */
+.scroll-indicator {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dark .scroll-indicator {
+  color: #ffffff;
+}
+
+.dark .scroll-indicator:hover {
+  color: var(--brand-hover);
 }
 
 /* Spacing System - Pixel Pushers Values */
@@ -351,11 +570,16 @@ body {
 }
 
 .card-hover-effect {
-  transition: background-color 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  border: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .card-hover-effect:hover {
-  background-color: var(--border-medium);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--brand-primary);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+  transform: translateY(-4px);
 }
 
 /* Responsive Design */
@@ -382,6 +606,16 @@ body {
   }
 }
 
+/* Performance Animations */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
 /* Prevent default app centering */
 .App {
   text-align: left;
@@ -403,4 +637,38 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--brand-primary);
+}
+
+/* Modern Gradient Utilities */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-hover));
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, var(--secondary-blue), var(--secondary-purple));
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-hover));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Glass Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Glow Effects */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+  transition: box-shadow 0.3s ease;
 }

@@ -2,11 +2,25 @@ import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { mockData } from '../mock';
 import { useTranslation } from '../hooks/useTranslation';
+import { useScrollSection } from '../hooks/useScrollSection';
+import { useTheme } from '../contexts/ThemeContext';
 import LanguageSelector from './LanguageSelector';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslation();
+  const { isInHero } = useScrollSection();
+  const { isLight } = useTheme();
+  
+  // Dynamic header styles based on section and theme
+  const isHeroLight = isInHero && isLight;
+  const headerBgClass = isHeroLight 
+    ? 'bg-slate-900/90 backdrop-blur-sm border-white/20' 
+    : 'bg-page/95 backdrop-blur-sm border-border-light';
+    
+  const textColorClass = isHeroLight ? 'text-white' : 'text-primary';
+  const logoColorClass = isHeroLight ? 'text-white' : 'text-primary';
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -17,11 +31,11 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-page/95 backdrop-blur-sm border-b border-border-light">
+    <header className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${headerBgClass} ${isHeroLight ? 'header-hero-light' : ''}`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="font-display font-black text-xl text-primary uppercase tracking-tight">
+          <div className={`font-display font-black text-xl uppercase tracking-tight transition-colors duration-300 ${logoColorClass}`}>
             {mockData.developer.name.split(' ').map(name => name[0]).join('')}
           </div>
 
@@ -43,12 +57,16 @@ const Header = () => {
               {t.contact}
             </button>
             
-            {/* Language Selector */}
-            <LanguageSelector />
+            {/* Theme Toggle and Language Selector */}
+            <div className="flex items-center gap-3">
+              <ThemeToggle />
+              <LanguageSelector />
+            </div>
           </nav>
 
-          {/* Mobile Menu Button and Language Selector */}
+          {/* Mobile Menu Button, Theme Toggle and Language Selector */}
           <div className="md:hidden flex items-center gap-3">
+            <ThemeToggle />
             <LanguageSelector />
             <button
               className="p-2 text-primary"

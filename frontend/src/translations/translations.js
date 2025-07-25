@@ -134,7 +134,7 @@ export const translations = {
     messageRequired: "Mensagem *",
     
     // Placeholders
-    yourName: "Victor Silva",
+    yourName: "Seu nome",
     yourEmail: "seu.email@exemplo.com",
     subjectPlaceholder: "Sobre o que é?",
     messagePlaceholder: "Conte-me sobre seu projeto ou ideia...",
@@ -197,7 +197,6 @@ export const translations = {
     otherProjects: "Other Projects",
     liveDemo: "Live Demo",
     code: "Code",
-    more: "more",
     
     // Project Details
     dashboardTitle: "School Management Dashboard",

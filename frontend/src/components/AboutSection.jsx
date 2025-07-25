@@ -30,7 +30,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-32 bg-page">
+    <section id="about" className="pt-20 pb-32 bg-page relative -mt-16">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="heading-2 mb-16 text-center">

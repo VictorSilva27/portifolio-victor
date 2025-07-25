@@ -2,15 +2,14 @@
 export const mockData = {
   developer: {
     name: "Victor Silva",
-    title: "Desenvolvedor Frontend/Mobile",
-    bio: "Desenvolvedor Frontend/Mobile com experiência em React, React Native, Flutter e Vue.js, especializado no desenvolvimento de interfaces interativas, componentes reutilizáveis e integração com APIs REST. Focado em boas práticas de UX, organização de projetos escaláveis e entrega de valor ao usuário.",
+    title: "Desenvolvedor FullStack",
+    bio: "Desenvolvedor FullStack com experiência em React, React Native, Flutter e Vue.js, especializado no desenvolvimento de interfaces interativas, componentes reutilizáveis e integração com APIs REST. Focado em boas práticas de UX, organização de projetos escaláveis e entrega de valor ao usuário.",
     email: "victoradaosilva2@gmail.com",
     phone: "+55 (14) 99855-2940",
     location: "Brasil",
     social: {
       github: "https://github.com/VictorSilva27",
-      linkedin: "https://linkedin.com/in/victor-silva27",
-      twitter: "https://twitter.com/victorsilva27"
+      linkedin: "https://linkedin.com/in/victor-silva027",
     }
   },
   

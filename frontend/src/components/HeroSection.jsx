@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { mockData } from '../mock';
 import { useTranslation } from '../hooks/useTranslation';
+import OptimizedImage from './OptimizedImage';
 
 const HeroSection = () => {
   const t = useTranslation();
@@ -10,11 +11,20 @@ const HeroSection = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToProjects = () => {
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const downloadResume = () => {
+    // For now, we'll open the LinkedIn profile. Later you can add a real PDF
+    window.open(mockData.developer.social.linkedin, '_blank');
+  };
+
   return (
     <section className="hero-section">
       <div className="hero-background">
-        <img 
-          src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2" 
+        <OptimizedImage 
+          src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?w=1920&q=80" 
           alt="Developer workspace"
           className="hero-image"
         />
@@ -29,15 +39,21 @@ const HeroSection = () => {
           <p className="body-large mb-8 max-w-md">
             {t.heroTitle}
           </p>
-          <p className="body-small mb-12 max-w-lg text-secondary">
+          <p className="body-medium mb-12 max-w-lg text-primary opacity-90">
             {t.heroBio}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <button className="btn-primary">
+            <button 
+              onClick={scrollToProjects}
+              className="btn-primary btn-hover-scale"
+            >
               {t.viewMyWork}
             </button>
-            <button className="btn-secondary">
+            <button 
+              onClick={downloadResume}
+              className="btn-secondary btn-hover-scale"
+            >
               {t.downloadResume}
             </button>
           </div>
@@ -73,7 +89,7 @@ const HeroSection = () => {
       {/* Scroll indicator */}
       <button 
         onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-primary hover:text-brand-hover transition-colors animate-bounce"
+        className="scroll-indicator absolute bottom-12 left-1/2 transform -translate-x-1/2 text-primary hover:text-brand-hover transition-all duration-300 animate-bounce z-10"
       >
         <ArrowDown size={32} />
       </button>

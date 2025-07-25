@@ -1,37 +1,85 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="A product of emergent.sh" />
-        <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-        <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-        <title>Emergent | Fullstack App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="theme-color" content="#6366f1" />
+        <meta name="description" content="Desenvolvedor FullStack especializado em React, React Native, Flutter e Vue.js. Portfolio profissional de Victor Silva." />
+        <meta name="keywords" content="desenvolvedor, frontend, mobile, react, react native, flutter, vue.js, javascript, typescript, portfolio" />
+        <meta name="author" content="Victor Silva" />
+        <meta name="robots" content="index, follow" />
+        
+        <!-- Preconnect to external domains for faster loading -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        
+        <!-- DNS Prefetch -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        
+        <!-- Fonts with font-display: swap for better performance -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        
+        <!-- Favicon and icons -->
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+        
+        <!-- Manifest for PWA -->
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Victor Silva - Frontend/Mobile Developer" />
+        <meta property="og:description" content="Desenvolvedor FullStack especializado em React, React Native, Flutter e Vue.js. Portfolio profissional." />
+        <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+        <meta property="og:url" content="https://your-portfolio-url.com" />
+        <meta property="og:site_name" content="Victor Silva Portfolio" />
+        
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Victor Silva - Frontend/Mobile Developer" />
+        <meta name="twitter:description" content="Desenvolvedor FullStack especializado em React, React Native, Flutter e Vue.js." />
+        <meta name="twitter:image" content="%PUBLIC_URL%/og-image.jpg" />
+        
+        <!-- Security headers -->
+        <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+        <meta http-equiv="X-Frame-Options" content="DENY" />
+        <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+        
+        <title>Victor Silva - Frontend/Mobile Developer | Portfolio</title>
     </head>
     <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <noscript>
+            <div style="padding: 2rem; text-align: center; font-family: Arial, sans-serif;">
+                <h1>JavaScript Required</h1>
+                <p>This portfolio requires JavaScript to run. Please enable JavaScript in your browser.</p>
+                <p>Para visualizar este portfólio, ative o JavaScript no seu navegador.</p>
+            </div>
+        </noscript>
         <div id="root"></div>
-        <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+        
+        <!-- Loading indicator while JS loads -->
+        <style>
+            #root:empty::before {
+                content: '';
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                width: 40px;
+                height: 40px;
+                margin: -20px 0 0 -20px;
+                border: 3px solid #f3f3f3;
+                border-top: 3px solid #6366f1;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+            }
+            
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        </style>
     </body>
 </html>

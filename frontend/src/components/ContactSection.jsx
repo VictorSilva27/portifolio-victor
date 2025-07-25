@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
 import { mockData } from '../mock';
 import { useTranslation } from '../hooks/useTranslation';
 
@@ -111,14 +111,6 @@ const ContactSection = () => {
                     rel="noopener noreferrer"
                   >
                     <Linkedin size={20} />
-                  </a>
-                  <a 
-                    href={mockData.developer.social.twitter}
-                    className="w-10 h-10 bg-page border border-border-light rounded-full flex items-center justify-center text-primary hover:text-brand-hover hover:border-border-medium transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Twitter size={20} />
                   </a>
                 </div>
               </div>

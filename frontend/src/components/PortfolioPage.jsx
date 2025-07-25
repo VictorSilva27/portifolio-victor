@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from './SEO';
 import Header from './Header';
 import HeroSection from './HeroSection';
 import AboutSection from './AboutSection';
@@ -12,6 +13,7 @@ import Footer from './Footer';
 const PortfolioPage = () => {
   return (
     <div className="portfolio-page">
+      <SEO />
       <Header />
       <HeroSection />
       <AboutSection />
