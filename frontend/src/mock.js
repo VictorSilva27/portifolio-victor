@@ -1,45 +1,53 @@
-// Mock data for developer portfolio
+// Real developer profile data
 export const mockData = {
   developer: {
-    name: "Alex Johnson",
-    title: "Full Stack Developer",
-    bio: "Passionate full-stack developer with 5+ years of experience building scalable web applications. I specialize in modern JavaScript frameworks, cloud technologies, and creating seamless user experiences.",
-    email: "alex.johnson@email.com",
-    phone: "+1 (555) 123-4567",
-    location: "San Francisco, CA",
+    name: "Seu Nome",
+    title: "Desenvolvedor Frontend/Mobile",
+    bio: "Desenvolvedor Frontend/Mobile com experiência em React, React Native, Flutter e Vue.js, especializado no desenvolvimento de interfaces interativas, componentes reutilizáveis e integração com APIs REST. Focado em boas práticas de UX, organização de projetos escaláveis e entrega de valor ao usuário.",
+    email: "seu.email@gmail.com",
+    phone: "+55 (11) 99999-9999",
+    location: "Brasil",
     social: {
-      github: "https://github.com/alexjohnson",
-      linkedin: "https://linkedin.com/in/alexjohnson",
-      twitter: "https://twitter.com/alexjohnson"
+      github: "https://github.com/seuperfil",
+      linkedin: "https://linkedin.com/in/seuperfil",
+      twitter: "https://twitter.com/seuperfil"
     }
   },
   
   skills: {
     frontend: [
-      { name: "React", level: 95, years: 4 },
-      { name: "Vue.js", level: 85, years: 3 },
-      { name: "TypeScript", level: 90, years: 3 },
-      { name: "Next.js", level: 88, years: 2 },
-      { name: "Tailwind CSS", level: 92, years: 3 }
+      { name: "React.js", level: 90, years: 3 },
+      { name: "Vue.js 3", level: 85, years: 2 },
+      { name: "TypeScript", level: 88, years: 2 },
+      { name: "JavaScript ES6+", level: 95, years: 4 },
+      { name: "HTML5/CSS3", level: 92, years: 4 },
+      { name: "Tailwind CSS", level: 90, years: 2 },
+      { name: "Vuetify", level: 85, years: 2 }
+    ],
+    mobile: [
+      { name: "React Native", level: 88, years: 2 },
+      { name: "Flutter", level: 85, years: 2 },
+      { name: "Kotlin", level: 75, years: 1 },
+      { name: "flutter_bloc", level: 80, years: 1 }
     ],
     backend: [
-      { name: "Node.js", level: 93, years: 4 },
-      { name: "Python", level: 87, years: 3 },
-      { name: "FastAPI", level: 85, years: 2 },
-      { name: "Express.js", level: 90, years: 4 },
-      { name: "GraphQL", level: 80, years: 2 }
+      { name: "Node.js", level: 85, years: 2 },
+      { name: "Nuxt.js", level: 80, years: 1 },
+      { name: "Express.js", level: 83, years: 2 },
+      { name: "RESTful APIs", level: 90, years: 3 }
     ],
     database: [
-      { name: "MongoDB", level: 88, years: 3 },
-      { name: "PostgreSQL", level: 85, years: 3 },
-      { name: "Redis", level: 78, years: 2 },
-      { name: "Firebase", level: 82, years: 2 }
+      { name: "SQL", level: 88, years: 3 },
+      { name: "PostgreSQL", level: 85, years: 2 },
+      { name: "MySQL", level: 85, years: 2 }
     ],
     tools: [
-      { name: "Docker", level: 85, years: 3 },
-      { name: "AWS", level: 80, years: 2 },
-      { name: "Git", level: 95, years: 5 },
-      { name: "Kubernetes", level: 75, years: 1 }
+      { name: "Git/GitHub", level: 90, years: 3 },
+      { name: "Android Studio", level: 85, years: 2 },
+      { name: "VS Code", level: 95, years: 4 },
+      { name: "Yarn", level: 88, years: 2 },
+      { name: "Jest", level: 80, years: 1 },
+      { name: "Jira", level: 75, years: 1 }
     ]
   },
 
