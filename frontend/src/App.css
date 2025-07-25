@@ -536,6 +536,13 @@ body {
   color: var(--brand-hover);
 }
 
+/* Footer Styles */
+.footer-section {
+  padding: 4rem 0;
+  background-color: var(--bg-page);
+  border-top: 1px solid var(--border-light);
+}
+
 /* Spacing System - Pixel Pushers Values */
 .space-8 { margin: 8px; }     /* Small spacing */
 .space-20 { margin: 20px; }   /* Standard spacing */

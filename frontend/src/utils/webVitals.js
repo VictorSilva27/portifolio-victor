@@ -1,4 +1,4 @@
-import { getCLS, getFID, getFCP, getLCP, getTTFB } from 'web-vitals';
+import { onCLS, onINP, onFCP, onLCP, onTTFB } from 'web-vitals';
 
 // Function to send metrics to analytics
 const sendToAnalytics = (metric) => {
@@ -24,11 +24,11 @@ const sendToAnalytics = (metric) => {
 
 // Initialize Web Vitals monitoring
 export const initWebVitals = () => {
-  getCLS(sendToAnalytics);
-  getFID(sendToAnalytics);
-  getFCP(sendToAnalytics);
-  getLCP(sendToAnalytics);
-  getTTFB(sendToAnalytics);
+  onCLS(sendToAnalytics);
+  onINP(sendToAnalytics); // Updated from onFID to onINP in web-vitals v5
+  onFCP(sendToAnalytics);
+  onLCP(sendToAnalytics);
+  onTTFB(sendToAnalytics);
 };
 
 // Performance monitoring component

@@ -18,8 +18,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-page border-t border-border-light">
-      <div className="container mx-auto px-6 py-16">
+    <footer className="footer-section">
+      <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Main Footer Content */}
           <div className="grid md:grid-cols-4 gap-8 mb-12">
