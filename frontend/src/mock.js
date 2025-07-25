@@ -117,41 +117,44 @@ export const mockData = {
   experience: [
     {
       id: 1,
-      company: "TechCorp Solutions",
-      position: "Senior Full Stack Developer",
-      duration: "2022 - Present",
-      location: "San Francisco, CA",
-      description: "Lead development of enterprise web applications serving 100k+ users. Architect scalable solutions using React, Node.js, and cloud technologies.",
+      company: "Desenvolvimento Freelancer",
+      position: "Desenvolvedor Frontend/Mobile",
+      duration: "2022 - Presente",
+      location: "Brasil (Remoto)",
+      description: "Desenvolvimento de aplicações web e mobile utilizando React, React Native, Flutter e Vue.js. Trabalho em equipe remota com foco em entrega de valor e qualidade de código.",
       achievements: [
-        "Reduced application load time by 40% through optimization",
-        "Led team of 4 developers on major product redesign",
-        "Implemented CI/CD pipeline reducing deployment time by 60%"
+        "Desenvolveu dashboard escolar completo com KPIs e gráficos interativos",
+        "Criou apps educacionais com funcionalidades drag-and-drop e múltipla escolha",
+        "Implementou sistemas de autenticação com melhorias em UI/UX",
+        "Trabalhou em equipe remota de 5 pessoas usando Flutter e diferentes SOs"
       ]
     },
     {
       id: 2,
-      company: "StartupXYZ",
-      position: "Full Stack Developer",
+      company: "Projetos Acadêmicos e Estudos",
+      position: "Estudante de Desenvolvimento",
       duration: "2020 - 2022",
-      location: "Remote",
-      description: "Developed core platform features for B2B SaaS application. Worked closely with product team to deliver user-focused solutions.",
+      location: "Brasil",
+      description: "Período de aprendizado intensivo em tecnologias frontend e mobile. Desenvolvimento de projetos práticos para consolidar conhecimentos em React, Vue.js e Flutter.",
       achievements: [
-        "Built real-time notification system handling 10k+ events/day",
-        "Implemented payment processing with 99.9% uptime",
-        "Developed responsive admin dashboard used by 500+ clients"
+        "Domínio de React.js e Vue.js 3 com TypeScript",
+        "Experiência prática com React Native e Flutter",
+        "Aprendizado de SQL avançado com queries complexas",
+        "Desenvolvimento de componentes reutilizáveis e escaláveis"
       ]
     },
     {
       id: 3,
-      company: "Digital Agency Pro",
-      position: "Junior Developer",
+      company: "Primeira Experiência Tech",
+      position: "Desenvolvedor Júnior",
       duration: "2019 - 2020",
-      location: "New York, NY",
-      description: "Developed custom websites and web applications for various clients. Gained experience in multiple technologies and client communication.",
+      location: "Brasil",
+      description: "Início da carreira em desenvolvimento. Foco em aprender boas práticas de programação, trabalho em equipe e comunicação eficiente.",
       achievements: [
-        "Delivered 20+ client projects on time and within budget",
-        "Improved website performance scores by average of 35%",
-        "Mentored 2 intern developers"
+        "Aprendeu fundamentos sólidos de JavaScript e HTML/CSS",
+        "Desenvolveu primeira aplicação com integração a APIs REST",
+        "Praticou testes manuais e documentação de bugs usando Jira",
+        "Adquiriu experiência com versionamento Git e trabalho colaborativo"
       ]
     }
   ],
@@ -159,19 +162,19 @@ export const mockData = {
   testimonials: [
     {
       id: 1,
-      name: "Sarah Mitchell",
-      position: "Product Manager",
-      company: "TechCorp Solutions",
-      text: "Alex is an exceptional developer who consistently delivers high-quality code. His ability to understand complex requirements and translate them into elegant solutions is remarkable.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b47c"
+      name: "Colega de Equipe",
+      position: "Desenvolvedor Flutter",
+      company: "Projeto Colaborativo",
+      text: "Trabalhar com ele foi uma excelente experiência. Mesmo usando sistemas diferentes (Windows/Linux), conseguimos manter uma comunicação eficiente e entregar um produto de qualidade usando Flutter.",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
     },
     {
       id: 2,
-      name: "Mike Chen",
-      position: "CTO",
-      company: "StartupXYZ",
-      text: "Working with Alex was a game-changer for our platform. His technical expertise and problem-solving skills helped us scale from 1k to 100k users seamlessly.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+      name: "Cliente Satisfeito",
+      position: "Gestor de Produto",
+      company: "Projeto Dashboard",
+      text: "O dashboard de gestão escolar superou nossas expectativas. A interface é intuitiva, os gráficos são claros e as funcionalidades atendem perfeitamente às nossas necessidades.",
+      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b47c"
     }
   ]
 };
