@@ -4,9 +4,10 @@ import { mockData } from '../mock';
 const SkillsSection = () => {
   const skillCategories = [
     { title: 'Frontend', skills: mockData.skills.frontend, color: 'brand-primary' },
-    { title: 'Backend', skills: mockData.skills.backend, color: 'secondary-olive' },
-    { title: 'Database', skills: mockData.skills.database, color: 'secondary-yellow' },
-    { title: 'Tools & Cloud', skills: mockData.skills.tools, color: 'brand-primary' }
+    { title: 'Mobile', skills: mockData.skills.mobile, color: 'secondary-olive' },
+    { title: 'Backend', skills: mockData.skills.backend, color: 'secondary-yellow' },
+    { title: 'Database', skills: mockData.skills.database, color: 'brand-primary' },
+    { title: 'Tools & Testing', skills: mockData.skills.tools, color: 'secondary-olive' }
   ];
 
   return (
