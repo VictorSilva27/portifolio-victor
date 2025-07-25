@@ -41,13 +41,16 @@ const AboutSection = () => {
                 {mockData.developer.bio}
               </p>
               <p className="body-small mb-8">
-                I believe in building applications that not only function flawlessly but also provide 
-                exceptional user experiences. My approach combines technical expertise with creative 
-                problem-solving to deliver solutions that make a real impact.
+                Tenho experiência sólida em desenvolvimento frontend com React, Vue.js, e mobile com React Native e Flutter. 
+                Minha paixão está em criar interfaces que combinam funcionalidade robusta com excelente experiência do usuário.
+              </p>
+              <p className="body-small mb-8">
+                Trabalhei em projetos diversos, desde dashboards corporativos até aplicativos educacionais interativos, 
+                sempre focando em código limpo, componentes reutilizáveis e integração eficiente com APIs REST.
               </p>
               <p className="body-small">
-                When I'm not coding, you'll find me exploring new technologies, contributing to 
-                open-source projects, or sharing knowledge with the developer community.
+                Quando não estou codando, estou explorando novas tecnologias, contribuindo em projetos open source 
+                ou compartilhando conhecimento com a comunidade de desenvolvedores.
               </p>
             </div>
 
