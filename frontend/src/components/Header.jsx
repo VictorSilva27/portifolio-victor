@@ -62,8 +62,7 @@ const Header = () => {
             <button onClick={() => scrollToSection('projects')} className="block w-full text-left py-2 text-primary hover:text-brand-hover">
               Projects
             </button>
-            <button onClick={() => scrollT
-oSection('experience')} className="block w-full text-left py-2 text-primary hover:text-brand-hover">
+            <button onClick={() => scrollToSection('experience')} className="block w-full text-left py-2 text-primary hover:text-brand-hover">
               Experience
             </button>
             <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-2 text-primary hover:text-brand-hover">
