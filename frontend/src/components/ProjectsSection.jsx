@@ -1,17 +1,83 @@
 import React from 'react';
 import { ExternalLink, Github, Star } from 'lucide-react';
 import { mockData } from '../mock';
+import { useTranslation } from '../hooks/useTranslation';
 
 const ProjectsSection = () => {
-  const featuredProjects = mockData.projects.filter(project => project.featured);
-  const otherProjects = mockData.projects.filter(project => !project.featured);
+  const t = useTranslation();
+  
+  const projects = [
+    {
+      id: 1,
+      title: t.dashboardTitle,
+      description: t.dashboardDesc,
+      technologies: ["React.js", "Chart.js", "REST API", "Responsive Design"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+      githubUrl: "https://github.com/seuperfil/dashboard-escolar",
+      liveUrl: "https://dashboard-escolar.vercel.app",
+      featured: true
+    },
+    {
+      id: 2,
+      title: t.educationalAppTitle,
+      description: t.educationalAppDesc,
+      technologies: ["React Native", "Drag & Drop", "Educational UI"],
+      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
+      githubUrl: "https://github.com/seuperfil/educational-app",
+      liveUrl: "https://educational-app.expo.dev",
+      featured: true
+    },
+    {
+      id: 3,
+      title: t.authSystemTitle,
+      description: t.authSystemDesc,
+      technologies: ["Vue.js", "Authentication", "UI/UX", "Security"],
+      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
+      githubUrl: "https://github.com/seuperfil/auth-system",
+      liveUrl: "https://auth-system.netlify.app",
+      featured: true
+    },
+    {
+      id: 4,
+      title: t.flutterAppTitle,
+      description: t.flutterAppDesc,
+      technologies: ["Flutter", "flutter_bloc", "Team Collaboration", "Cross-platform"],
+      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c",
+      githubUrl: "https://github.com/seuperfil/flutter-app",
+      liveUrl: "Em desenvolvimento",
+      featured: false
+    },
+    {
+      id: 5,
+      title: t.fullstackTitle,
+      description: t.fullstackDesc,
+      technologies: ["React", "Nuxt.js", "Full Stack", "API Integration"],
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      githubUrl: "https://github.com/seuperfil/fullstack-project",
+      liveUrl: "https://fullstack-project.vercel.app",
+      featured: false
+    },
+    {
+      id: 6,
+      title: t.paymentAppTitle,
+      description: t.paymentAppDesc,
+      technologies: ["React Native", "Kotlin", "Payment APIs", "Redux"],
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
+      githubUrl: "https://github.com/seuperfil/payment-app",
+      liveUrl: "Em desenvolvimento",
+      featured: false
+    }
+  ];
+  
+  const featuredProjects = projects.filter(project => project.featured);
+  const otherProjects = projects.filter(project => !project.featured);
 
   return (
     <section id="projects" className="py-32 bg-page">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="heading-2 mb-16 text-center">
-            Featured Projects
+            {t.projectsTitle}
           </h2>
           
           {/* Featured Projects */}
@@ -68,7 +134,7 @@ const ProjectsSection = () => {
                       rel="noopener noreferrer"
                     >
                       <Github size={20} />
-                      <span className="body-small">Code</span>
+                      <span className="body-small">{t.code}</span>
                     </a>
                     <a 
                       href={project.liveUrl}
@@ -77,7 +143,7 @@ const ProjectsSection = () => {
                       rel="noopener noreferrer"
                     >
                       <ExternalLink size={20} />
-                      <span className="body-small">Live Demo</span>
+                      <span className="body-small">{t.liveDemo}</span>
                     </a>
                   </div>
                 </div>
@@ -88,7 +154,7 @@ const ProjectsSection = () => {
           {/* Other Projects Grid */}
           <div>
             <h3 className="heading-5 mb-8 text-primary">
-              Other Projects
+              {t.otherProjects}
             </h3>
             
             <div className="grid md:grid-cols-2 gap-8">
@@ -126,7 +192,7 @@ const ProjectsSection = () => {
                       ))}
                       {project.technologies.length > 3 && (
                         <span className="px-2 py-1 text-secondary caption">
-                          +{project.technologies.length - 3} more
+                          +{project.technologies.length - 3} {t.more}
                         </span>
                       )}
                     </div>
@@ -140,7 +206,7 @@ const ProjectsSection = () => {
                         rel="noopener noreferrer"
                       >
                         <Github size={18} />
-                        <span className="caption">Code</span>
+                        <span className="caption">{t.code}</span>
                       </a>
                       <a 
                         href={project.liveUrl}
@@ -149,7 +215,7 @@ const ProjectsSection = () => {
                         rel="noopener noreferrer"
                       >
                         <ExternalLink size={18} />
-                        <span className="caption">Demo</span>
+                        <span className="caption">{t.liveDemo}</span>
                       </a>
                     </div>
                   </div>

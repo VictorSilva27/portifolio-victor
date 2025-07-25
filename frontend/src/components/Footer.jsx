@@ -1,8 +1,11 @@
 import React from 'react';
 import { Heart, Github, Linkedin, Mail } from 'lucide-react';
 import { mockData } from '../mock';
+import { useTranslation } from '../hooks/useTranslation';
 
 const Footer = () => {
+  const t = useTranslation();
+  
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -26,8 +29,7 @@ const Footer = () => {
                 {mockData.developer.name}
               </h3>
               <p className="body-small text-secondary mb-6 max-w-md">
-                Full-stack developer passionate about creating exceptional digital experiences 
-                and building solutions that make a real impact.
+                {t.footerDescription}
               </p>
               
               {/* Social Links */}
@@ -59,38 +61,38 @@ const Footer = () => {
             
             {/* Quick Links */}
             <div>
-              <h4 className="heading-6 text-primary mb-4">Quick Links</h4>
+              <h4 className="heading-6 text-primary mb-4">{t.quickLinks}</h4>
               <nav className="space-y-2">
                 <button 
                   onClick={() => scrollToSection('about')}
                   className="block text-left body-small text-secondary hover:text-brand-hover transition-colors"
                 >
-                  About
+                  {t.about}
                 </button>
                 <button 
                   onClick={() => scrollToSection('skills')}
                   className="block text-left body-small text-secondary hover:text-brand-hover transition-colors"
                 >
-                  Skills
+                  {t.skills}
                 </button>
                 <button 
                   onClick={() => scrollToSection('projects')}
                   className="block text-left body-small text-secondary hover:text-brand-hover transition-colors"
                 >
-                  Projects
+                  {t.projects}
                 </button>
                 <button 
                   onClick={() => scrollToSection('experience')}
                   className="block text-left body-small text-secondary hover:text-brand-hover transition-colors"
                 >
-                  Experience
+                  {t.experience}
                 </button>
               </nav>
             </div>
             
             {/* Contact Info */}
             <div>
-              <h4 className="heading-6 text-primary mb-4">Get In Touch</h4>
+              <h4 className="heading-6 text-primary mb-4">{t.getInTouch}</h4>
               <div className="space-y-2">
                 <a 
                   href={`mailto:${mockData.developer.email}`}
@@ -116,14 +118,14 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="flex items-center gap-6">
                 <span className="caption text-secondary">
-                  © {new Date().getFullYear()} All rights reserved
+                  © {new Date().getFullYear()} {t.allRightsReserved}
                 </span>
                 
                 <button 
                   onClick={scrollToTop}
                   className="caption text-primary hover:text-brand-hover transition-colors"
                 >
-                  Back to top ↑
+                  {t.backToTop}
                 </button>
               </div>
             </div>

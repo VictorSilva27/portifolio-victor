@@ -42,6 +42,7 @@ export const translations = {
     otherProjects: "Outros Projetos",
     liveDemo: "Demo",
     code: "Código",
+    more: "mais",
     
     // Project Details
     dashboardTitle: "Dashboard de Gestão Escolar",
@@ -64,6 +65,7 @@ export const translations = {
     
     // Experience Section
     experienceTitle: "Experiência",
+    keyAchievements: "Principais Conquistas",
     
     // Experience Details
     freelancerPosition: "Desenvolvedor Frontend/Mobile",
@@ -132,7 +134,7 @@ export const translations = {
     messageRequired: "Mensagem *",
     
     // Placeholders
-    yourName: "Seu nome",
+    yourName: "Victor Silva",
     yourEmail: "seu.email@exemplo.com",
     subjectPlaceholder: "Sobre o que é?",
     messagePlaceholder: "Conte-me sobre seu projeto ou ideia...",
@@ -195,6 +197,7 @@ export const translations = {
     otherProjects: "Other Projects",
     liveDemo: "Live Demo",
     code: "Code",
+    more: "more",
     
     // Project Details
     dashboardTitle: "School Management Dashboard",
@@ -217,6 +220,7 @@ export const translations = {
     
     // Experience Section
     experienceTitle: "Experience",
+    keyAchievements: "Key Achievements",
     
     // Experience Details
     freelancerPosition: "Frontend/Mobile Developer",

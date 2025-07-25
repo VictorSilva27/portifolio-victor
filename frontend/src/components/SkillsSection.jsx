@@ -1,13 +1,16 @@
 import React from 'react';
 import { mockData } from '../mock';
+import { useTranslation } from '../hooks/useTranslation';
 
 const SkillsSection = () => {
+  const t = useTranslation();
+  
   const skillCategories = [
-    { title: 'Frontend', skills: mockData.skills.frontend, color: 'brand-primary' },
-    { title: 'Mobile', skills: mockData.skills.mobile, color: 'secondary-olive' },
-    { title: 'Backend', skills: mockData.skills.backend, color: 'secondary-yellow' },
-    { title: 'Database', skills: mockData.skills.database, color: 'brand-primary' },
-    { title: 'Tools & Testing', skills: mockData.skills.tools, color: 'secondary-olive' }
+    { title: t.frontend, skills: mockData.skills.frontend, color: 'brand-primary' },
+    { title: t.mobile, skills: mockData.skills.mobile, color: 'secondary-olive' },
+    { title: t.backend, skills: mockData.skills.backend, color: 'secondary-yellow' },
+    { title: t.database, skills: mockData.skills.database, color: 'brand-primary' },
+    { title: t.toolsTesting, skills: mockData.skills.tools, color: 'secondary-olive' }
   ];
 
   return (
@@ -15,7 +18,7 @@ const SkillsSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="heading-2 mb-16 text-center">
-            Skills & Technologies
+            {t.skillsTitle}
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">

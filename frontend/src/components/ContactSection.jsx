@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
 import { mockData } from '../mock';
+import { useTranslation } from '../hooks/useTranslation';
 
 const ContactSection = () => {
+  const t = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,7 +32,7 @@ const ContactSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="heading-2 mb-16 text-center">
-            Get In Touch
+            {t.contactTitle}
           </h2>
           
           <div className="grid lg:grid-cols-2 gap-16">
@@ -38,11 +40,10 @@ const ContactSection = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="heading-4 text-primary mb-6">
-                  Let's Work Together
+                  {t.contactSubtitle}
                 </h3>
                 <p className="body-small text-secondary mb-8 leading-relaxed">
-                  I'm always interested in new opportunities and exciting projects. 
-                  Whether you have a project in mind or just want to connect, I'd love to hear from you.
+                  {t.contactDescription}
                 </p>
               </div>
               
@@ -53,7 +54,7 @@ const ContactSection = () => {
                     <Mail className="text-page" size={20} />
                   </div>
                   <div>
-                    <h4 className="heading-6 text-primary">Email</h4>
+                    <h4 className="heading-6 text-primary">{t.email}</h4>
                     <a 
                       href={`mailto:${mockData.developer.email}`}
                       className="body-small text-secondary hover:text-brand-hover transition-colors"
@@ -68,7 +69,7 @@ const ContactSection = () => {
                     <Phone className="text-page" size={20} />
                   </div>
                   <div>
-                    <h4 className="heading-6 text-primary">Phone</h4>
+                    <h4 className="heading-6 text-primary">{t.phone}</h4>
                     <a 
                       href={`tel:${mockData.developer.phone}`}
                       className="body-small text-secondary hover:text-brand-hover transition-colors"
@@ -83,7 +84,7 @@ const ContactSection = () => {
                     <MapPin className="text-page" size={20} />
                   </div>
                   <div>
-                    <h4 className="heading-6 text-primary">Location</h4>
+                    <h4 className="heading-6 text-primary">{t.location}</h4>
                     <span className="body-small text-secondary">
                       {mockData.developer.location}
                     </span>
@@ -93,7 +94,7 @@ const ContactSection = () => {
               
               {/* Social Links */}
               <div>
-                <h4 className="heading-6 text-primary mb-4">Follow Me</h4>
+                <h4 className="heading-6 text-primary mb-4">{t.followMe}</h4>
                 <div className="flex space-x-4">
                   <a 
                     href={mockData.developer.social.github}
@@ -129,7 +130,7 @@ const ContactSection = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block heading-6 text-primary mb-2">
-                      Name *
+                      {t.nameRequired}
                     </label>
                     <input
                       type="text"
@@ -139,13 +140,13 @@ const ContactSection = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-page border border-border-light rounded-lg text-primary placeholder-secondary focus:border-brand-primary focus:outline-none transition-colors"
-                      placeholder="Your name"
+                      placeholder={t.yourName}
                     />
                   </div>
                   
                   <div>
                     <label htmlFor="email" className="block heading-6 text-primary mb-2">
-                      Email *
+                      {t.emailRequired}
                     </label>
                     <input
                       type="email"
@@ -155,14 +156,14 @@ const ContactSection = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-page border border-border-light rounded-lg text-primary placeholder-secondary focus:border-brand-primary focus:outline-none transition-colors"
-                      placeholder="your.email@example.com"
+                      placeholder={t.yourEmail}
                     />
                   </div>
                 </div>
                 
                 <div>
                   <label htmlFor="subject" className="block heading-6 text-primary mb-2">
-                    Subject *
+                    {t.subjectRequired}
                   </label>
                   <input
                     type="text"
@@ -172,13 +173,13 @@ const ContactSection = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-page border border-border-light rounded-lg text-primary placeholder-secondary focus:border-brand-primary focus:outline-none transition-colors"
-                    placeholder="What's this about?"
+                    placeholder={t.subjectPlaceholder}
                   />
                 </div>
                 
                 <div>
                   <label htmlFor="message" className="block heading-6 text-primary mb-2">
-                    Message *
+                    {t.messageRequired}
                   </label>
                   <textarea
                     id="message"
@@ -188,7 +189,7 @@ const ContactSection = () => {
                     required
                     rows={6}
                     className="w-full px-4 py-3 bg-page border border-border-light rounded-lg text-primary placeholder-secondary focus:border-brand-primary focus:outline-none transition-colors resize-none"
-                    placeholder="Tell me about your project or idea..."
+                    placeholder={t.messagePlaceholder}
                   />
                 </div>
                 
@@ -197,7 +198,7 @@ const ContactSection = () => {
                   className="btn-primary w-full flex items-center justify-center gap-2"
                 >
                   <Send size={20} />
-                  Send Message
+                  {t.sendMessage}
                 </button>
               </form>
             </div>

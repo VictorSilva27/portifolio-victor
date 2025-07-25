@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { mockData } from '../mock';
+import { useTranslation } from '../hooks/useTranslation';
+import LanguageSelector from './LanguageSelector';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const t = useTranslation();
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -23,50 +26,56 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
             <button onClick={() => scrollToSection('about')} className="nav-link">
-              About
+              {t.about}
             </button>
             <button onClick={() => scrollToSection('skills')} className="nav-link">
-              Skills
+              {t.skills}
             </button>
             <button onClick={() => scrollToSection('projects')} className="nav-link">
-              Projects
+              {t.projects}
             </button>
             <button onClick={() => scrollToSection('experience')} className="nav-link">
-              Experience
+              {t.experience}
             </button>
             <button onClick={() => scrollToSection('contact')} className="nav-link">
-              Contact
+              {t.contact}
             </button>
+            
+            {/* Language Selector */}
+            <LanguageSelector />
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-primary"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Button and Language Selector */}
+          <div className="md:hidden flex items-center gap-3">
+            <LanguageSelector />
+            <button
+              className="p-2 text-primary"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 space-y-2">
             <button onClick={() => scrollToSection('about')} className="block w-full text-left py-2 text-primary hover:text-brand-hover">
-              About
+              {t.about}
             </button>
             <button onClick={() => scrollToSection('skills')} className="block w-full text-left py-2 text-primary hover:text-brand-hover">
-              Skills
+              {t.skills}
             </button>
             <button onClick={() => scrollToSection('projects')} className="block w-full text-left py-2 text-primary hover:text-brand-hover">
-              Projects
+              {t.projects}
             </button>
             <button onClick={() => scrollToSection('experience')} className="block w-full text-left py-2 text-primary hover:text-brand-hover">
-              Experience
+              {t.experience}
             </button>
             <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-2 text-primary hover:text-brand-hover">
-              Contact
+              {t.contact}
             </button>
           </nav>
         )}

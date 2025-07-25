@@ -1,14 +1,48 @@
 import React from 'react';
 import { MapPin, Calendar } from 'lucide-react';
 import { mockData } from '../mock';
+import { useTranslation } from '../hooks/useTranslation';
 
 const ExperienceSection = () => {
+  const t = useTranslation();
+  
+  const experiences = [
+    {
+      id: 1,
+      company: t.freelancerCompany,
+      position: t.freelancerPosition,
+      duration: t.freelancerDuration,
+      location: t.freelancerLocation,
+      description: t.freelancerDesc,
+      achievements: [
+        t.freelancerAchievement1,
+        t.freelancerAchievement2,
+        t.freelancerAchievement3,
+        t.freelancerAchievement4
+      ]
+    },
+    {
+      id: 2,
+      company: t.studentCompany,
+      position: t.studentPosition,
+      duration: t.studentDuration,
+      location: t.studentLocation,
+      description: t.studentDesc,
+      achievements: [
+        t.studentAchievement1,
+        t.studentAchievement2,
+        t.studentAchievement3,
+        t.studentAchievement4
+      ]
+    }
+  ];
+  
   return (
     <section id="experience" className="py-32 bg-card">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="heading-2 mb-16 text-center">
-            Experience
+            {t.experienceTitle}
           </h2>
           
           <div className="relative">
@@ -16,7 +50,7 @@ const ExperienceSection = () => {
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border-medium md:left-1/2 md:-translate-x-0.5"></div>
             
             <div className="space-y-12">
-              {mockData.experience.map((exp, index) => (
+              {experiences.map((exp, index) => (
                 <div 
                   key={exp.id}
                   className={`relative flex flex-col md:flex-row gap-8 ${
@@ -59,7 +93,7 @@ const ExperienceSection = () => {
                         {/* Achievements */}
                         <div>
                           <h5 className="heading-6 text-primary mb-3">
-                            Key Achievements
+                            {t.keyAchievements}
                           </h5>
                           <ul className="space-y-2">
                             {exp.achievements.map((achievement, achIndex) => (

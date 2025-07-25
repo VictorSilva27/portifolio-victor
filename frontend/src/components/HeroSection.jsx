@@ -1,8 +1,11 @@
 import React from 'react';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { mockData } from '../mock';
+import { useTranslation } from '../hooks/useTranslation';
 
 const HeroSection = () => {
+  const t = useTranslation();
+  
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -24,18 +27,18 @@ const HeroSection = () => {
             {mockData.developer.name}
           </h1>
           <p className="body-large mb-8 max-w-md">
-            {mockData.developer.title}
+            {t.heroTitle}
           </p>
           <p className="body-small mb-12 max-w-lg text-secondary">
-            {mockData.developer.bio}
+            {t.heroBio}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <button className="btn-primary">
-              View My Work
+              {t.viewMyWork}
             </button>
             <button className="btn-secondary">
-              Download Resume
+              {t.downloadResume}
             </button>
           </div>
 
