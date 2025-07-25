@@ -114,12 +114,6 @@ const Footer = () => {
           {/* Bottom Footer */}
           <div className="border-t border-border-light pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="flex items-center gap-2 text-secondary">
-                <span className="caption">Made with</span>
-                <Heart className="text-brand-primary" size={16} />
-                <span className="caption">by {mockData.developer.name.split(' ')[0]}</span>
-              </div>
-              
               <div className="flex items-center gap-6">
                 <span className="caption text-secondary">
                   © {new Date().getFullYear()} All rights reserved
