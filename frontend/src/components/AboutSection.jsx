@@ -6,23 +6,23 @@ const AboutSection = () => {
   const highlights = [
     {
       icon: <Code size={32} />,
-      title: "Clean Code",
-      description: "Writing maintainable, scalable code that stands the test of time"
+      title: "Componentes Reutilizáveis",
+      description: "Criando interfaces escaláveis e organizadas com React, Vue.js e Flutter"
     },
     {
       icon: <Lightbulb size={32} />,
-      title: "Problem Solver",
-      description: "Turning complex challenges into elegant, user-friendly solutions"
+      title: "UX Focado",
+      description: "Desenvolvendo experiências intuitivas com foco na jornada do usuário"
     },
     {
       icon: <Users size={32} />,
-      title: "Team Player",
-      description: "Collaborating effectively with cross-functional teams"
+      title: "Trabalho Remoto",
+      description: "Experiência colaborativa em equipes distribuídas geograficamente"
     },
     {
       icon: <Coffee size={32} />,
-      title: "Continuous Learner",
-      description: "Always exploring new technologies and best practices"
+      title: "Aprendizado Contínuo",
+      description: "Sempre explorando novas tecnologias e boas práticas de desenvolvimento"
     }
   ];
 
