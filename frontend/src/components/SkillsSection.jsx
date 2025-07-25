@@ -18,7 +18,7 @@ const SkillsSection = () => {
             Skills & Technologies
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {skillCategories.map((category, categoryIndex) => (
               <div key={categoryIndex} className="space-y-6">
                 <h3 className="heading-5 text-primary border-b border-border-medium pb-2">
