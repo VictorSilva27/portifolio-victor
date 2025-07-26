@@ -3,7 +3,7 @@ import { onCLS, onINP, onFCP, onLCP, onTTFB } from 'web-vitals';
 // Function to send metrics to analytics
 const sendToAnalytics = (metric) => {
   // In production, you would send this to your analytics service
-  console.log('Performance Metric:', metric);
+  // console.log('Performance Metric:', metric);
   
   // Example: Send to Google Analytics 4
   if (typeof gtag !== 'undefined') {

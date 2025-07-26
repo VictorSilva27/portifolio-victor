@@ -27,7 +27,6 @@ export const mockData = {
       { name: "React Native", level: 88, years: 2 },
       { name: "Flutter", level: 85, years: 2 },
       { name: "Kotlin", level: 75, years: 1 },
-      { name: "flutter_bloc", level: 80, years: 1 }
     ],
     backend: [
       { name: "Node.js", level: 85, years: 2 },

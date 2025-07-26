@@ -8,8 +8,8 @@ export const translations = {
     contact: "Contato",
     
     // Hero Section
-    heroTitle: "Desenvolvedor Frontend/Mobile",
-    heroBio: "Desenvolvedor Frontend/Mobile com experiência em React, React Native, Flutter e Vue.js, especializado no desenvolvimento de interfaces interativas, componentes reutilizáveis e integração com APIs REST. Focado em boas práticas de UX, organização de projetos escaláveis e entrega de valor ao usuário.",
+    heroTitle: "Desenvolvedor FullStack",
+    heroBio: "Desenvolvedor FullStack com experiência em React, React Native, Flutter e Vue.js, especializado no desenvolvimento de interfaces interativas, componentes reutilizáveis e integração com APIs REST. Focado em boas práticas de UX, organização de projetos escaláveis e entrega de valor ao usuário.",
     viewMyWork: "Ver Meu Trabalho",
     downloadResume: "Baixar Currículo",
     
@@ -39,6 +39,57 @@ export const translations = {
     
     // Projects Section
     projectsTitle: "Projetos em Destaque",
+    projectsSection: {
+      title: "Projetos em Destaque",
+      subtitle: "Aqui estão alguns dos meus projetos mais recentes do GitHub",
+      filters: {
+        featured: "Destacados",
+        deployed: "Com Deploy",
+        frontend: "Frontend",
+        backend: "Backend",
+        mobile: "Mobile",
+        all: "Todos"
+      },
+      stats: {
+        toggle: "Estatísticas",
+        show: "Ver Estatísticas",
+        hide: "Ocultar Estatísticas",
+        repositories: "Repositórios",
+        stars: "Stars",
+        forks: "Forks",
+        featured: "Destacados",
+        deployed: "Com Deploy"
+      },
+      loading: "Carregando projetos do GitHub...",
+      error: {
+        title: "Erro ao carregar projetos",
+        retry: "Tentar novamente"
+      },
+      noProjects: {
+        title: "Nenhum projeto encontrado",
+        subtitle: "Tente filtrar por uma categoria diferente"
+      },
+      github: {
+        title: "Veja mais no GitHub",
+        subtitle: "Explore todos os meus repositórios e contribuições",
+        button: "Visitar GitHub",
+        viewOnGitHub: "Ver no GitHub"
+      },
+      deployment: {
+        vercel: "Deploy no Vercel",
+        netlify: "Deploy no Netlify",
+        pages: "GitHub Pages",
+        docker: "Docker Deploy",
+        none: "Sem deploy"
+      },
+      viewCode: "Código",
+      viewLive: "Demo",
+      viewDemo: "Demo",
+      viewProject: "Ver Projeto",
+      moreProjects: "Mais Projetos",
+      updatedAt: "Atualizado"
+    },
+    projectsDescription: "Aqui estão alguns dos meus projetos mais recentes do GitHub",
     otherProjects: "Outros Projetos",
     liveDemo: "Demo",
     code: "Código",
@@ -163,8 +214,8 @@ export const translations = {
     contact: "Contact",
     
     // Hero Section
-    heroTitle: "Frontend/Mobile Developer",
-    heroBio: "Frontend/Mobile developer with experience in React, React Native, Flutter and Vue.js, specialized in developing interactive interfaces, reusable components and REST API integration. Focused on UX best practices, scalable project organization and delivering user value.",
+    heroTitle: "FullStack Developer",
+    heroBio: "FullStack developer with experience in React, React Native, Flutter and Vue.js, specialized in developing interactive interfaces, reusable components and REST API integration. Focused on UX best practices, scalable project organization and delivering user value.",
     viewMyWork: "View My Work",
     downloadResume: "Download Resume",
     
@@ -194,6 +245,57 @@ export const translations = {
     
     // Projects Section
     projectsTitle: "Featured Projects",
+    projectsSection: {
+      title: "Featured Projects",
+      subtitle: "Here are some of my latest projects from GitHub",
+      filters: {
+        featured: "Featured",
+        deployed: "Deployed",
+        frontend: "Frontend",
+        backend: "Backend",
+        mobile: "Mobile",
+        all: "All"
+      },
+      stats: {
+        toggle: "Statistics",
+        show: "Show Statistics",
+        hide: "Hide Statistics",
+        repositories: "Repositories",
+        stars: "Stars",
+        forks: "Forks",
+        featured: "Featured",
+        deployed: "Deployed"
+      },
+      loading: "Loading projects from GitHub...",
+      error: {
+        title: "Error loading projects",
+        retry: "Try again"
+      },
+      noProjects: {
+        title: "No projects found",
+        subtitle: "Try filtering by a different category"
+      },
+      github: {
+        title: "See more on GitHub",
+        subtitle: "Explore all my repositories and contributions",
+        button: "Visit GitHub",
+        viewOnGitHub: "View on GitHub"
+      },
+      deployment: {
+        vercel: "Deployed on Vercel",
+        netlify: "Deployed on Netlify",
+        pages: "GitHub Pages",
+        docker: "Docker Deploy",
+        none: "No deployment"
+      },
+      viewCode: "Code",
+      viewLive: "Live Demo",
+      viewDemo: "Demo",
+      viewProject: "View Project",
+      moreProjects: "More Projects",
+      updatedAt: "Updated"
+    },
+    projectsDescription: "Here are some of my most recent projects from GitHub",
     otherProjects: "Other Projects",
     liveDemo: "Live Demo",
     code: "Code",
