@@ -62,6 +62,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "build:vercel": "GENERATE_SOURCEMAP=false craco build",
     "test": "craco test",
     "test:coverage": "craco test --coverage --watchAll=false",
     "test:watch": "craco test --coverage",
