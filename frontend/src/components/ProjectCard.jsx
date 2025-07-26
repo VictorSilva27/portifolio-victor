@@ -1,7 +1,9 @@
 import React from 'react';
 import { Github, ExternalLink, Star, GitFork, Eye, Calendar, Globe, Server, Smartphone, Database, Code, Layers } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const ProjectCard = ({ project }) => {
+  const { isLight } = useTheme();
   // Ícones para categorias
   const getCategoryIcon = (category) => {
     const icons = {
@@ -37,13 +39,23 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <div className="bg-card border border-border-light rounded-lg overflow-hidden hover:border-border-medium transition-all duration-300 group hover:shadow-lg">
+    <div className={`rounded-lg overflow-hidden transition-all duration-300 group hover:shadow-lg ${
+      isLight 
+        ? 'bg-white border border-gray-200 hover:border-gray-300 hover:shadow-xl' 
+        : 'bg-card border border-border-light hover:border-border-medium'
+    }`}>
       {/* Header */}
-      <div className="p-6 border-b border-border-light">
+      <div className={`p-6 border-b ${
+        isLight 
+          ? 'border-gray-200' 
+          : 'border-border-light'
+      }`}>
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center gap-2">
             {getCategoryIcon(project.category)}
-            <h3 className="heading-6 text-primary truncate">
+            <h3 className={`heading-6 truncate ${
+              isLight ? 'text-gray-900' : 'text-primary'
+            }`}>
               {project.name}
             </h3>
           </div>
@@ -57,7 +69,9 @@ const ProjectCard = ({ project }) => {
           )}
         </div>
 
-        <p className="body-small text-secondary line-clamp-2 mb-4">
+        <p className={`body-small line-clamp-2 mb-4 ${
+          isLight ? 'text-gray-600' : 'text-secondary'
+        }`}>
           {project.description || 'Projeto desenvolvido com foco em boas práticas e tecnologias modernas.'}
         </p>
 
@@ -71,13 +85,19 @@ const ProjectCard = ({ project }) => {
           {project.topics.slice(0, 3).map((topic, index) => (
             <span 
               key={index}
-              className="px-2 py-1 bg-page text-secondary rounded-md text-xs border border-border-light"
+              className={`px-2 py-1 rounded-md text-xs border ${
+                isLight 
+                  ? 'bg-gray-50 text-gray-700 border-gray-200' 
+                  : 'bg-page text-secondary border-border-light'
+              }`}
             >
               {topic}
             </span>
           ))}
           {project.topics.length > 3 && (
-            <span className="px-2 py-1 text-secondary text-xs">
+            <span className={`px-2 py-1 text-xs ${
+              isLight ? 'text-gray-500' : 'text-secondary'
+            }`}>
               +{project.topics.length - 3}
             </span>
           )}
@@ -98,14 +118,20 @@ const ProjectCard = ({ project }) => {
       </div>
 
       {/* Stats */}
-      <div className="px-6 py-4 bg-page border-b border-border-light">
+      <div className={`px-6 py-4 border-b ${
+        isLight 
+          ? 'bg-gray-50 border-gray-200' 
+          : 'bg-page border-border-light'
+      }`}>
         <div className="grid grid-cols-3 gap-4 text-center">
           <div className="flex flex-col items-center">
             <div className="flex items-center gap-1 text-yellow-400 mb-1">
               <Star size={16} />
               <span className="font-medium">{project.stargazers_count}</span>
             </div>
-            <span className="caption text-secondary">Stars</span>
+            <span className={`caption ${
+              isLight ? 'text-gray-500' : 'text-secondary'
+            }`}>Stars</span>
           </div>
           
           <div className="flex flex-col items-center">
@@ -113,7 +139,9 @@ const ProjectCard = ({ project }) => {
               <GitFork size={16} />
               <span className="font-medium">{project.forks_count}</span>
             </div>
-            <span className="caption text-secondary">Forks</span>
+            <span className={`caption ${
+              isLight ? 'text-gray-500' : 'text-secondary'
+            }`}>Forks</span>
           </div>
           
           <div className="flex flex-col items-center">
@@ -121,7 +149,9 @@ const ProjectCard = ({ project }) => {
               <Eye size={16} />
               <span className="font-medium">{project.watchers_count}</span>
             </div>
-            <span className="caption text-secondary">Watchers</span>
+            <span className={`caption ${
+              isLight ? 'text-gray-500' : 'text-secondary'
+            }`}>Watchers</span>
           </div>
         </div>
       </div>
@@ -129,13 +159,17 @@ const ProjectCard = ({ project }) => {
       {/* Footer */}
       <div className="p-6">
         <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-1 text-secondary caption">
+          <div className={`flex items-center gap-1 caption ${
+            isLight ? 'text-gray-500' : 'text-secondary'
+          }`}>
             <Calendar size={12} />
             <span>Atualizado {formatDate(project.updated_at)}</span>
           </div>
           
           {project.size && (
-            <span className="caption text-secondary">
+            <span className={`caption ${
+              isLight ? 'text-gray-500' : 'text-secondary'
+            }`}>
               {Math.round(project.size / 1024)} KB
             </span>
           )}
@@ -147,7 +181,11 @@ const ProjectCard = ({ project }) => {
             href={project.html_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-secondary flex-1 flex items-center justify-center gap-2"
+            className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+              isLight 
+                ? 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200' 
+                : 'btn-secondary'
+            }`}
           >
             <Github size={16} />
             <span>Código</span>
@@ -158,7 +196,11 @@ const ProjectCard = ({ project }) => {
               href={project.deployment.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary flex-1 flex items-center justify-center gap-2"
+              className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+                isLight 
+                  ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                  : 'btn-primary'
+              }`}
             >
               <ExternalLink size={16} />
               <span>Demo</span>

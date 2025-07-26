@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Github, ExternalLink, Filter, Loader2, RefreshCw, BarChart3, Star } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { useGitHub } from '../hooks/useGitHub';
+import { useTheme } from '../contexts/ThemeContext';
 import ProjectCard from './ProjectCard';
 
 const ProjectsSection = () => {
   const t = useTranslation();
+  const { isLight } = useTheme();
   const { 
     repositories, 
     loading, 
@@ -146,8 +148,10 @@ const ProjectsSection = () => {
                 onClick={() => setActiveFilter(option.key)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
                   activeFilter === option.key
-                    ? 'bg-brand-primary text-white'
-                    : 'bg-card text-secondary hover:bg-bg-light border border-border-light'
+                    ? isLight ? 'bg-gray-200 text-gray-600' : 'bg-brand-primary text-white'
+                    : isLight 
+                      ? 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
+                      : 'bg-card text-secondary hover:bg-bg-light border border-border-light'
                 }`}
               >
                 <span>{option.icon}</span>
