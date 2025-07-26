@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Globe, ChevronDown } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useTheme } from '../contexts/ThemeContext';
 import { translations } from '../translations/translations';
 
 const LanguageSelector = () => {
   const { language, setLanguage } = useLanguage();
+  const { isLight } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const t = translations[language];
 
@@ -24,7 +26,11 @@ const LanguageSelector = () => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 text-primary hover:text-brand-hover transition-colors rounded-lg border border-border-light hover:border-border-medium"
+        className={`flex items-center gap-2 px-3 py-2 transition-colors rounded-lg border ${
+          isLight 
+            ? 'text-primary bg-card border-border-light hover:border-border-medium hover:text-brand-hover' 
+            : 'text-white bg-transparent border-white/30 hover:border-white hover:text-white'
+        }`}
       >
         <Globe size={18} />
         <span className="hidden sm:inline text-sm">{currentLanguage?.flag}</span>
@@ -33,7 +39,11 @@ const LanguageSelector = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 bg-card border border-border-light rounded-lg shadow-lg z-50 min-w-[140px]">
+        <div className={`absolute top-full right-0 mt-2 border rounded-lg shadow-lg z-50 min-w-[140px] ${
+          isLight
+            ? 'bg-card border-border-light'
+            : 'bg-transparent border-white/30'
+        }`}>
           {languages.map((lang) => (
             <button
               key={lang.code}
