@@ -1,0 +1,26 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="url(#gradient)" stroke="#4f46e5" stroke-width="2"/>
+  
+  <!-- Letter V -->
+  <path d="M18 20 L26 44 L32 28 L38 44 L46 20" 
+        stroke="white" 
+        stroke-width="3" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+  
+  <!-- Letter S -->
+  <path d="M48 22 C48 20, 50 18, 52 18 C54 18, 56 20, 56 22 C56 24, 54 26, 52 26 C50 26, 48 28, 48 30 C48 32, 50 34, 52 34 C54 34, 56 32, 56 30" 
+        stroke="white" 
+        stroke-width="2.5" 
+        stroke-linecap="round" 
+        fill="none"/>
+</svg>

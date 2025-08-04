@@ -4,7 +4,9 @@
 
 ```
 frontend/public/images/
-├── testimonials/          # 👥 Fotos de recomendações
+├── logo-vs.svg               # 🎨 Logo clássica (VS)
+├── logo-vs-modern.svg        # 🎨 Logo moderna (VS)  
+├── testimonials/             # 👥 Fotos de recomendações
 │   ├── colleague-male.svg      # Placeholder masculino
 │   ├── client-female.svg       # Placeholder feminino
 │   └── [suas-fotos].jpg        # Suas fotos reais
@@ -95,6 +97,39 @@ avatar: "/images/testimonials/sua-nova-foto.jpg"
 - [ ] Arquivo comprimido (< 100KB)
 - [ ] Referência atualizada no código
 - [ ] Testado no navegador
+
+## 🎨 Logo Victor Silva (VS)
+
+### Arquivos Disponíveis
+- `logo-vs.svg` - Logo clássica com fundo circular
+- `logo-vs-modern.svg` - Logo moderna com fundo arredondado e gradiente
+- `../favicon.svg` - Versão otimizada para favicon
+
+### Componente React
+Localizado em: `src/components/Logo.jsx`
+
+```jsx
+import Logo from './components/Logo';
+
+// Uso básico
+<Logo size={40} adaptive={true} />
+
+// Com texto
+<Logo showText={true} />
+
+// Variantes: 'modern', 'classic', 'adaptive'
+<Logo variant="modern" />
+```
+
+### Características
+- **Moderna**: Fundo quadrado, gradiente azul→roxo→rosa
+- **Clássica**: Fundo circular, gradiente azul→roxo
+- **Adaptiva**: Se adapta ao tema claro/escuro
+
+### Integração Atual
+- ✅ Header do site (versão adaptiva)
+- ✅ Favicon do navegador
+- ✅ Meta tags para redes sociais
 
 ---
 

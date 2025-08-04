@@ -6,6 +6,7 @@ import { useScrollSection } from '../hooks/useScrollSection';
 import { useTheme } from '../contexts/ThemeContext';
 import LanguageSelector from './LanguageSelector';
 import ThemeToggle from './ThemeToggle';
+import Logo from './Logo';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,8 +36,8 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className={`font-display font-black text-xl uppercase tracking-tight transition-colors duration-300 ${logoColorClass}`}>
-            {mockData.developer.name.split(' ').map(name => name[0]).join('')}
+          <div className="flex items-center">
+            <Logo size={40} adaptive={true} className="hover:scale-105 transition-all duration-300 cursor-pointer" />
           </div>
 
           {/* Desktop Navigation */}
