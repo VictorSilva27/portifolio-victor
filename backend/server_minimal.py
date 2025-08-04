@@ -160,3 +160,8 @@ async def get_status_checks():
 
 # Vercel serverless function handler
 handler = app
+
+# Local development
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("server_minimal:app", host="0.0.0.0", port=8000)
