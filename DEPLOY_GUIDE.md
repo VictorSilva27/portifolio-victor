@@ -40,12 +40,15 @@ git push origin main
 1. **Acesse [vercel.com](https://vercel.com)** e faça login
 2. **Clique em "New Project"**
 3. **Conecte seu repositório GitHub**: `VictorSilva27/portifolio-victor`
-4. **Configure variáveis de ambiente** (use suas credenciais reais do `.env`):
+4. **IMPORTANTE: Configure as variáveis de ambiente ANTES do deploy**:
+   - Vá em **Settings > Environment Variables**
+   - Adicione uma por vez:
    ```
    SUPABASE_URL = https://hajkpnnzkatougwbmddv.supabase.co
-   SUPABASE_KEY = sua-chave-anon-do-env
-   SUPABASE_SERVICE_ROLE_KEY = sua-chave-service-role-do-env
+   SUPABASE_KEY = (cole sua chave anon do arquivo .env)
+   SUPABASE_SERVICE_ROLE_KEY = (cole sua chave service_role do arquivo .env)
    ```
+   - Para cada variável, selecione: **Production, Preview, Development**
 5. **Deploy!** - O Vercel detectará automaticamente o `vercel.json`
 
 ### Método 2: Via CLI
@@ -69,15 +72,19 @@ vercel env add SUPABASE_SERVICE_ROLE_KEY
 vercel --prod
 ```
 
-## 🔐 Configurar Variáveis de Ambiente
+## 🔐 Configurar Variáveis de Ambiente (OBRIGATÓRIO)
 
-No dashboard do Vercel, vá em **Settings > Environment Variables** e adicione:
+**ATENÇÃO**: Configure as variáveis ANTES do primeiro deploy!
 
-| Nome | Valor | Ambiente |
+No dashboard do Vercel, vá em **Settings > Environment Variables** e adicione **exatamente** estas variáveis:
+
+| Nome | Valor (use suas credenciais do .env) | Ambiente |
 |------|-------|----------|
-| `SUPABASE_URL` | `https://seu-projeto.supabase.co` | Production, Preview, Development |
-| `SUPABASE_KEY` | `sua-chave-anon` | Production, Preview, Development |
-| `SUPABASE_SERVICE_ROLE_KEY` | `sua-chave-service-role` | Production, Preview, Development |
+| `SUPABASE_URL` | `https://hajkpnnzkatougwbmddv.supabase.co` | Production, Preview, Development |
+| `SUPABASE_KEY` | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...` (sua chave anon) | Production, Preview, Development |
+| `SUPABASE_SERVICE_ROLE_KEY` | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...` (sua chave service_role) | Production, Preview, Development |
+
+⚠️ **Copie os valores exatos do seu arquivo `backend/.env`**
 
 ## 🌐 URLs após Deploy
 

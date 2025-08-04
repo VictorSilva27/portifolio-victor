@@ -16,8 +16,9 @@
 
 ### ✅ **Deploy (Vercel)**
 - [x] ✅ `vercel.json` corrigido (routes → rewrites)
-- [x] ✅ Variáveis de ambiente preparadas
+- [x] ✅ Erro de variáveis de ambiente CORRIGIDO
 - [x] ✅ Builds configurados para monorepo
+- [x] ✅ Headers de segurança configurados
 
 ## 🚀 DEPLOY AGORA!
 
@@ -39,19 +40,16 @@ CREATE POLICY "Allow all operations on status_checks" ON status_checks FOR ALL U
 ### 2. Push para GitHub (30 segundos)
 ```bash
 git add .
-git commit -m "feat: projeto completo para deploy Vercel + Supabase"
+git commit -m "feat: projeto completo para deploy Vercel + Supabase - env vars corrigidas"
 git push origin main
 ```
 
 ### 3. Deploy no Vercel (2 minutos)
 1. **[vercel.com](https://vercel.com)** → New Project
 2. **Conectar**: `VictorSilva27/portifolio-victor`
-3. **Variáveis de ambiente**:
-   ```
-   SUPABASE_URL = https://hajkpnnzkatougwbmddv.supabase.co
-   SUPABASE_KEY = (sua chave do .env)
-   SUPABASE_SERVICE_ROLE_KEY = (sua chave do .env)
-   ```
+3. **⚠️ ANTES DO DEPLOY**: Configurar variáveis de ambiente
+   - Settings > Environment Variables
+   - Usar valores do arquivo `VERCEL_ENV_VARS.md`
 4. **Deploy!**
 
 ## 🎉 Resultado Final
