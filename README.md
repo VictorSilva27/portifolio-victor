@@ -218,7 +218,7 @@ Victor Silva is a Frontend/Mobile Developer with expertise in:
 
 ## 📞 Contact
 
-- **Email**: [victorsilva2@gmail.com](mailto:victorsilva2@gmail.com)
+- **Email**: [victoradaosilva2@gmail.com](mailto:victoradaosilva2@gmail.com)
 - **LinkedIn**: [Victor Silva](https://linkedin.com/in/victor-silva)
 - **GitHub**: [VictorSilva27](https://github.com/VictorSilva27)
 - **Portfolio**: [Live Demo](https://your-portfolio-url.com)
