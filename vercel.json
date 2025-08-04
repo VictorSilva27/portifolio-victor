@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
+  "buildCommand": "cd frontend && yarn install && yarn build:vercel",
   "outputDirectory": "frontend/build",
-  "installCommand": "yarn",
-  "framework": "create-react-app",
+  "installCommand": "cd frontend && yarn install",
+  "framework": null,
   "rewrites": [
     {
       "source": "/(.*)",
