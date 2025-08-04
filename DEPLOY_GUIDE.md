@@ -6,11 +6,17 @@
 2. **Conta no Supabase** - [supabase.com](https://supabase.com)
 3. **Projeto no GitHub** (público ou privado)
 
-## 🔧 Preparação
+## ✅ Seu Backend está Pronto!
 
-### 1. Configure o Supabase
+✅ **Configuração Completa**: Seu projeto está configurado corretamente para o Vercel
+✅ **Supabase Conectado**: Suas credenciais estão configuradas no `.env`
+✅ **Vercel.json Corrigido**: Resolvido o problema de `routes` vs `rewrites`
+
+## 🚀 Próximos Passos - Deploy no Vercel
+
+### 1. ⚙️ Criar tabela no Supabase (1 minuto)
+Vá ao **SQL Editor** do seu projeto Supabase e execute:
 ```sql
--- Execute este SQL no Supabase SQL Editor:
 CREATE TABLE IF NOT EXISTS status_checks (
     id TEXT PRIMARY KEY,
     client_name TEXT NOT NULL,
@@ -23,26 +29,24 @@ ALTER TABLE status_checks ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Allow all operations on status_checks" ON status_checks FOR ALL USING (true);
 ```
 
-### 2. Anote suas credenciais do Supabase
-No dashboard do Supabase, vá em **Settings > API**:
-- `Project URL` (ex: https://seu-projeto.supabase.co)
-- `anon public` (chave pública)
-- `service_role` (chave privada)
+### 2. 📤 Push para GitHub
+```bash
+git add .
+git commit -m "feat: projeto configurado para deploy Vercel + Supabase"
+git push origin main
+```
 
-## 🚀 Deploy no Vercel
-
-### Método 1: Via Dashboard (Recomendado)
-
+### 3. 🌐 Deploy no Vercel
 1. **Acesse [vercel.com](https://vercel.com)** e faça login
 2. **Clique em "New Project"**
-3. **Conecte seu repositório GitHub**
-4. **Configure as variáveis de ambiente:**
+3. **Conecte seu repositório GitHub**: `VictorSilva27/portifolio-victor`
+4. **Configure variáveis de ambiente** (use suas credenciais reais do `.env`):
    ```
-   SUPABASE_URL = https://seu-projeto.supabase.co
-   SUPABASE_KEY = sua-chave-anon
-   SUPABASE_SERVICE_ROLE_KEY = sua-chave-service-role
+   SUPABASE_URL = https://hajkpnnzkatougwbmddv.supabase.co
+   SUPABASE_KEY = sua-chave-anon-do-env
+   SUPABASE_SERVICE_ROLE_KEY = sua-chave-service-role-do-env
    ```
-5. **Deploy automático** - O Vercel vai detectar o `vercel.json` e configurar tudo!
+5. **Deploy!** - O Vercel detectará automaticamente o `vercel.json`
 
 ### Método 2: Via CLI
 
