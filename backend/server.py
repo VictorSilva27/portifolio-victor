@@ -24,10 +24,10 @@ if not supabase_url or not supabase_key:
 supabase: Client = create_client(supabase_url, supabase_key)
 
 # Create the main app without a prefix
-app = FastAPI()
+app = FastAPI(title="Portfolio API", version="1.0.0")
 
-# Create a router with the /api prefix
-api_router = APIRouter(prefix="/api")
+# Remove the /api prefix since Vercel will handle routing
+api_router = APIRouter()
 
 
 # Define Models
@@ -105,11 +105,19 @@ async def get_status_checks():
 # Include the router in the main app
 app.include_router(api_router)
 
+# Configure CORS for production
+allowed_origins = [
+    "http://localhost:3000",  # Development
+    "http://localhost:3001",  # Development alt
+    "https://portifolio-victor.vercel.app",  # Production (update with your domain)
+    "https://*.vercel.app",  # Vercel preview deployments
+]
+
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=["*"],
-    allow_methods=["*"],
+    allow_origins=allowed_origins,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
 
@@ -134,3 +142,6 @@ async def health_check():
     except Exception as e:
         logger.error(f"Health check failed: {str(e)}")
         raise HTTPException(status_code=503, detail="Service unavailable")
+
+# Vercel serverless function handler
+handler = app

@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "backend/server.py": {
+      "runtime": "python3.9"
+    }
+  }
+}
