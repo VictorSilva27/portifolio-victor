@@ -1,10 +1,12 @@
-# ✅ STATUS: PRONTO PARA DEPLOY!
+# ✅ STATUS: OTIMIZADO E PRONTO PARA DEPLOY!
 
-## 🎯 Configuração Completa
+## 🎯 Configuração Completa + Otimizada
 
-### ✅ **Backend (FastAPI + Supabase)**
+### ✅ **Backend (FastAPI + Supabase) - OTIMIZADO**
 - [x] ✅ Migrado do MongoDB para Supabase
-- [x] ✅ Credenciais configuradas no `.env`
+- [x] ✅ **OTIMIZADO**: Tamanho reduzido de 250MB+ para ~50MB
+- [x] ✅ **Servidor minimal**: `server-minimal.py` com httpx
+- [x] ✅ **Dependencies mínimas**: Apenas 4 pacotes essenciais
 - [x] ✅ Serverless functions prontas para Vercel
 - [x] ✅ CORS configurado para produção
 - [x] ✅ Health check endpoint funcional
@@ -14,11 +16,12 @@
 - [x] ✅ API URL atualizada para `/api`
 - [x] ✅ Assets otimizados
 
-### ✅ **Deploy (Vercel)**
-- [x] ✅ `vercel.json` corrigido (routes → rewrites)
-- [x] ✅ Erro de variáveis de ambiente CORRIGIDO
+### ✅ **Deploy (Vercel) - PROBLEMAS RESOLVIDOS**
+- [x] ✅ ~~`vercel.json` corrigido (routes → rewrites)~~
+- [x] ✅ ~~Erro de variáveis de ambiente CORRIGIDO~~
+- [x] ✅ **NOVO**: Erro de tamanho de função RESOLVIDO
+- [x] ✅ **maxLambdaSize**: Configurado para 50MB
 - [x] ✅ Builds configurados para monorepo
-- [x] ✅ Headers de segurança configurados
 
 ## 🚀 DEPLOY AGORA!
 
