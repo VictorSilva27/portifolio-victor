@@ -110,8 +110,14 @@ allowed_origins = [
     "http://localhost:3000",  # Development
     "http://localhost:3001",  # Development alt
     "https://portifolio-victor.vercel.app",  # Production (update with your domain)
-    "https://*.vercel.app",  # Vercel preview deployments
+    "https://portifolio-victor-*.vercel.app",  # Vercel preview deployments
+    "https://*.vercel.app",  # All Vercel deployments
 ]
+
+# For development, allow all origins
+import os
+if os.environ.get("ENVIRONMENT") == "development":
+    allowed_origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
